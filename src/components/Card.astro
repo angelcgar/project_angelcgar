@@ -1,0 +1,24 @@
+---
+interface Props {
+  title: string;
+  body: string;
+  href: string;
+}
+
+const { href, title, body } = Astro.props;
+---
+
+<li class="link-card">
+  <h2>
+    {title}
+    <span>&rarr;</span>
+  </h2>
+  <p>
+    {body}
+  </p>
+</li>
+<style>
+  .link-card {
+    list-style: none;
+  }
+</style>
