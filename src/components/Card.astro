@@ -8,12 +8,14 @@ interface Props {
 const { href, title, body } = Astro.props;
 ---
 
-<li class="link-card">
-  <h2>
+<li
+  class="link-card relative flex flex-col items-center justify-center w-full p-[1px] transition-all rounded-md bg-gradient-to-b from-white/20 via-transparent to-transparent hover:via-white/10"
+>
+  <h2 class="mb-1 p-1 text-xl font-bold">
     {title}
     <span>&rarr;</span>
   </h2>
-  <p>
+  <p class="mb-4 p-1">
     {body}
   </p>
 </li>
