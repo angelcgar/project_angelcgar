@@ -1,22 +1,28 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Header from "../components/Header.astro";
 import Avatar from "../components/Avatar.astro";
 import MiGrid from "../components/MiGrid.astro";
-import OtroComponente from "../components/OtroComponente.astro";
 import MiFooter from "../components/MiFooter.astro";
 import Badge from "../components/Badge.astro";
+import Experience from "../components/Experience.astro";
+import SectionContainer from "../components/SectionContainer.astro";
 ---
 
-<Layout title="Portafolio de angelcgar.">
+<Layout
+  title="Portafolio de angelcgar ~ Desarrollador y Programador Web"
+  description="Portafolio de angelcgar"
+>
   <main class="max-w-5xl m-auto mt-16 pb-20 px-4">
     <Avatar />
-    <section class="w-full mx-auto lg:w-[740px] py-14">
+    <SectionContainer>
       <h1
         class="text-3xl md:text-4xl lg:text-5xl font-bold flex flex-row text-white gap-x-4 pb-4 lg:pb-10"
       >
         Hey, soy angelcgar <a
           href="https://www.linkedin.com/in/angel-contreras-b45a66290/"
+          target="_blank"
+          rel="noopener"
+          class="flex justify-center items-center"
         >
           <Badge>Disponible para trabajar</Badge>
         </a>
@@ -26,8 +32,11 @@ import Badge from "../components/Badge.astro";
         harum quos dignissimos illum laudantium eos, accusamus veniam blanditiis
         consectetur.
       </h2>
-      <OtroComponente />
-    </section>
+    </SectionContainer>
+
+    <SectionContainer>
+      <Experience />
+    </SectionContainer>
     <MiGrid />
     <MiFooter />
   </main>
