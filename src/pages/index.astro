@@ -6,6 +6,7 @@ import MiFooter from "../components/MiFooter.astro";
 import Badge from "../components/Badge.astro";
 import Experience from "../components/Experience.astro";
 import SectionContainer from "../components/SectionContainer.astro";
+import Briefcase from "../components/subComponents/iconos/Briefcase.astro";
 ---
 
 <Layout
@@ -14,7 +15,7 @@ import SectionContainer from "../components/SectionContainer.astro";
 >
   <main class="max-w-5xl m-auto mt-16 pb-20 px-4">
     <Avatar />
-    <SectionContainer>
+    <SectionContainer class="py-4">
       <h1
         class="text-3xl md:text-4xl lg:text-5xl font-bold flex flex-row text-white gap-x-4 pb-4 lg:pb-10"
       >
@@ -34,7 +35,11 @@ import SectionContainer from "../components/SectionContainer.astro";
       </h2>
     </SectionContainer>
 
-    <SectionContainer>
+    <SectionContainer id="experiencia">
+      <h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
+        <Briefcase class="size-7" />
+         Experiencia laboral
+      </h2>
       <Experience />
     </SectionContainer>
     <MiGrid />
