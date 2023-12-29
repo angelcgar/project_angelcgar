@@ -28,9 +28,16 @@ const { title, description } = Astro.props;
     font-family: system-ui, sans-serif;
     background: #000614f3;
     color-scheme: dark light;
+    scroll-behavior: smooth;
   }
   body {
     display: flex;
     flex-direction: column;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
   }
 </style>
