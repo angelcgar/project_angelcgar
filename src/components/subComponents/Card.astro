@@ -1,21 +1,21 @@
 ---
+import CircleArrowUpRight from "./iconos/CircleArrowUpRight.astro";
+import GithubIcon from "./iconos/GithubIcon.astro";
 interface Props {
   name: string;
   title: string;
   body: string;
   href: string;
   imageHref: string;
+  github: string;
 }
 
-const { name, href, title, body, imageHref } = Astro.props;
+const { name, href, title, body, imageHref, github } = Astro.props;
 ---
 
-<!-- 
-link-card relative flex flex-col items-center justify-center w-full p-[1px] transition-all rounded-md bg-gradient-to-b from-white/20 via-transparent to-transparent hover:via-white/10 -->
 <div
   class="link-card relative flex flex-col items-center justify-center w-full p-[1px] transition-all rounded-md bg-gradient-to-b from-white/20 via-transparent to-transparent hover:via-white/10"
 >
-  <!-- flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700 -->
   <img
     src={imageHref}
     alt=`Una imagen de mi proyecto ${name}`
@@ -24,20 +24,19 @@ link-card relative flex flex-col items-center justify-center w-full p-[1px] tran
   <h3 class="mt-4 text-2xl font-bold text-center text-white">
     {title}
   </h3>
-  <p class="mb-4 p-1">
+  <p class="mb-4 p-1 text-pretty">
     {body}
   </p>
-  <a href={href}> </a>
-</div>
 
-<!-- 
-<a href="#" class="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
-  <img class="object-cover w-full rounded-t-lg h-96 md:h-auto md:w-48 md:rounded-none md:rounded-s-lg" src="/docs/images/blog/image-4.jpg" alt="">
-  <div class="flex flex-col justify-between p-4 leading-normal">
-      <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology acquisitions 2021</h5>
-      <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
+  <div class="flex flex-row">
+    <a href={github} class="px-4 mx-4" target="_blank" rel="noopener">
+      <GithubIcon class="size-6" />
+    </a>
+    <a href={href} class="px-4 mx-4" target="_blank" rel="noopener">
+      <CircleArrowUpRight class="size-6" />
+    </a>
   </div>
-</a> -->
+</div>
 
 <style>
   .link-card {
