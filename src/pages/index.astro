@@ -7,6 +7,7 @@ import Badge from "../components/Badge.astro";
 import Experience from "../components/Experience.astro";
 import SectionContainer from "../components/SectionContainer.astro";
 import Briefcase from "../components/subComponents/iconos/Briefcase.astro";
+import CodeCircle from "../components/subComponents/iconos/CodeCircle.astro";
 ---
 
 <Layout
@@ -42,7 +43,14 @@ import Briefcase from "../components/subComponents/iconos/Briefcase.astro";
       </h2>
       <Experience />
     </SectionContainer>
-    <MiGrid />
-    <MiFooter />
+
+    <SectionContainer id="proyectos">
+      <h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
+        <CodeCircle class="size-7" />
+         Proyectos
+      </h2>
+      <MiGrid />
+      <MiFooter />
+    </SectionContainer>
   </main>
 </Layout>
