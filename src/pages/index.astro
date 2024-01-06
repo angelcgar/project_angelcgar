@@ -8,6 +8,7 @@ import Experience from "../components/Experience.astro";
 import SectionContainer from "../components/SectionContainer.astro";
 import Briefcase from "../components/subComponents/iconos/Briefcase.astro";
 import CodeCircle from "../components/subComponents/iconos/CodeCircle.astro";
+import SubTitle from "../components/SubTitle.astro";
 ---
 
 <Layout
@@ -37,20 +38,22 @@ import CodeCircle from "../components/subComponents/iconos/CodeCircle.astro";
     </SectionContainer>
 
     <SectionContainer id="experiencia">
-      <h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
+      <SubTitle>
         <Briefcase class="size-7" />
         Experiencia laboral
-      </h2>
+      </SubTitle>
+
       <Experience />
     </SectionContainer>
 
     <SectionContainer id="proyectos">
-      <h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
+      <SubTitle>
         <CodeCircle class="size-7" />
         Proyectos
-      </h2>
+      </SubTitle>
       <MiGrid />
     </SectionContainer>
+
     <SectionContainer id="contacto">
       <MiFooter />
     </SectionContainer>
