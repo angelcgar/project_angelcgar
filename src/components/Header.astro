@@ -1,19 +1,17 @@
+---
+import Enlace from "./subComponents/Enlace.astro";
+---
+
 <header
-  class="flex justify-center items-center py-2 w-full xl:w-[1120px] mx-auto"
+  class="flex justify-center items-center py-2 w-full xl:w-[1120px] mx-auto text-sm md:text-lg lg:text-xl"
 >
   <nav class="flex flex-row gap-x-10 opacity-80">
-    <a class="hover:bg-white/10 rounded-full px-3 transition" href="#sobre-mi"
-      >Sobre mí</a
-    >
-    <a
-      class="hover:bg-white/10 rounded-full px-3 transition"
-      href="#experiencia">Experiencia</a
-    >
-    <a class="hover:bg-white/10 rounded-full px-3 transition" href="#proyectos"
-      >Proyectos</a
-    >
-    <a class="hover:bg-white/10 rounded-full px-3 transition" href="#contacto"
-      >Contacto</a
-    >
+    <Enlace href="#sobre-mi">Sobre mí</Enlace>
+
+    <Enlace href="#experiencia">Experiencia</Enlace>
+
+    <Enlace href="#proyectos">Proyecto</Enlace>
+
+    <Enlace href="#contacto">Contacto</Enlace>
   </nav>
 </header>
