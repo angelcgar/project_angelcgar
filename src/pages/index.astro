@@ -3,12 +3,13 @@ import Layout from "../layouts/Layout.astro";
 import Avatar from "../components/Avatar.astro";
 import MiGrid from "../components/MiGrid.astro";
 import MiFooter from "../components/MiFooter.astro";
-import Badge from "../components/Badge.astro";
+import Badge from "../components/subComponents/Badge.astro";
 import Experience from "../components/Experience.astro";
 import SectionContainer from "../components/SectionContainer.astro";
 import Briefcase from "../components/subComponents/iconos/Briefcase.astro";
 import CodeCircle from "../components/subComponents/iconos/CodeCircle.astro";
 import SubTitle from "../components/SubTitle.astro";
+import Presentation from "../components/Presentation.astro";
 ---
 
 <Layout
@@ -18,23 +19,7 @@ import SubTitle from "../components/SubTitle.astro";
   <main class="max-w-5xl m-auto mt-16 pb-20 px-4">
     <SectionContainer class="py-14" id="sobre-mi">
       <Avatar />
-      <h1
-        class="text-3xl md:text-4xl lg:text-5xl font-bold flex flex-row text-white gap-x-4 pb-4 lg:pb-10"
-      >
-        Hey, soy angelcgar <a
-          href="https://www.linkedin.com/in/angel-contreras-b45a66290/"
-          target="_blank"
-          rel="noopener"
-          class="flex justify-center items-center"
-        >
-          <Badge>Disponible para trabajar</Badge>
-        </a>
-      </h1>
-      <h2 class="text-base md:text-xl lg:text-2xl text-wrap max-w-[700px]">
-        Un apasionado del mundo de la programación desde una edad temprana. Mi
-        amor por los desafíos lógicos y mi constante curiosidad me llevaron a
-        explorar el vasto universo de la informática.
-      </h2>
+      <Presentation />
     </SectionContainer>
 
     <SectionContainer id="experiencia">
