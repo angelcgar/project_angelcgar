@@ -19,7 +19,11 @@ const { name, href, title, body, imageHref, github } = Astro.props;
     alt=`Una imagen de mi proyecto ${name}`
     class="project-image"
   />
+
   <div class="flex flex-col gap-3 justify-center">
+    <a href={href} class="px-4 mx-4" target="_blank" rel="noopener">
+      <CircleArrowUpRight class="size-6" />
+    </a>
     <h3 class="mt-1 text-2xl font-bold text-white">
       {title}
     </h3>
@@ -30,9 +34,6 @@ const { name, href, title, body, imageHref, github } = Astro.props;
     <div class="flex flex-row">
       <a href={github} class="px-4 mx-4" target="_blank" rel="noopener">
         <GithubIcon class="size-6" />
-      </a>
-      <a href={href} class="px-4 mx-4" target="_blank" rel="noopener">
-        <CircleArrowUpRight class="size-6" />
       </a>
     </div>
   </div>
