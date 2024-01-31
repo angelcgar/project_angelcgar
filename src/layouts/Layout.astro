@@ -1,6 +1,7 @@
 ---
 import Header from "../components/Header.astro";
 import unnamed from "../imagenes/unnamed.png";
+import "../styles/global.css";
 interface Props {
   title: string;
   description: string;
@@ -22,8 +23,13 @@ const { title, description } = Astro.props;
   <body>
     <Header />
     <slot />
+
+    <script>
+      import "../scripts/menu.js";
+    </script>
   </body>
 </html>
+
 <style is:global>
   html {
     font-family: system-ui, sans-serif;
