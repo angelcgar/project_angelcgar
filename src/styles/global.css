@@ -63,6 +63,13 @@ h1 {
   display: unset;
 }
 
+.project-card {
+  border: #f3be9f solid 4px;
+  padding: 9px;
+  border-radius: 3px;
+  background-color: #01082c;
+}
+
 @media screen and (min-width: 636px) {
   .nav-links {
     margin-left: 5em;
