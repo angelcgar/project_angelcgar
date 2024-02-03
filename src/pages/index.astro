@@ -1,20 +1,22 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import SectionContainer from "../components/SectionContainer.astro";
 import Avatar from "../components/Avatar.astro";
+import Presentation from "../components/Presentation.astro";
+import SubTitle from "../components/SubTitle.astro";
+import Briefcase from "../icons/Briefcase.astro";
+import Experience from "../components/Experience.astro";
+import CodeCircle from "../icons/CodeCircle.astro";
 import MiGrid from "../components/MiGrid.astro";
 import MiFooter from "../components/MiFooter.astro";
-import Experience from "../components/Experience.astro";
-import SectionContainer from "../components/SectionContainer.astro";
-import SubTitle from "../components/SubTitle.astro";
-import Presentation from "../components/Presentation.astro";
-import Briefcase from "../icons/Briefcase.astro";
-import CodeCircle from "../icons/CodeCircle.astro";
 ---
 
 <Layout
   title="Portafolio de angelcgar ~ Desarrollador y Programador Web"
   description="Portafolio de angelcgar"
 >
+  <Header />
   <main class="max-w-5xl m-auto mt-16 pb-20 px-4">
     <SectionContainer class="py-14" id="sobre-mi">
       <Avatar />
