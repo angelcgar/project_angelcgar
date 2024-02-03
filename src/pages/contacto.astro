@@ -1,7 +1,19 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import SectionContainer from "../components/SectionContainer.astro";
+import Enlace from "../components/Enlace.astro";
 ---
 
 <Layout description="Trabajemos juntos" title="Trabajemos">
-  <p>Aqui es donde esta mi seccion de contacto</p>
+  <main>
+    <SectionContainer>
+      <nav class="nav-links" style="display: block;">
+        <Enlace href="/">Inicio</Enlace>
+      </nav>
+    </SectionContainer>
+
+    <SectionContainer>
+      <p>Aqui es donde esta mi seccion de contacto</p>
+    </SectionContainer>
+  </main>
 </Layout>
