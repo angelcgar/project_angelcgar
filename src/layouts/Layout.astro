@@ -1,6 +1,5 @@
 ---
 import { ViewTransitions } from "astro:transitions";
-import Header from "../components/Header.astro";
 import unnamed from "../image/unnamed.png";
 import "../styles/global.css";
 
@@ -30,22 +29,23 @@ const { title, description } = Astro.props;
     <script>
       import "../scripts/menu.js";
     </script>
-  </body><style is:global>
-    html {
-      font-family: system-ui, sans-serif;
-      background: #000614f3;
-      color-scheme: dark light;
-      scroll-behavior: smooth;
-    }
-    body {
-      display: flex;
-      flex-direction: column;
-    }
-
-    @media (prefers-reduced-motion: reduce) {
+    <style is:global>
       html {
-        scroll-behavior: auto;
+        font-family: system-ui, sans-serif;
+        background: #000614f3;
+        color-scheme: dark light;
+        scroll-behavior: smooth;
       }
-    }
-  </style>
+      body {
+        display: flex;
+        flex-direction: column;
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+      }
+    </style>
+  </body>
 </html>
