@@ -1,5 +1,82 @@
+---
+import SvglHTML from "../icons/SvglHTML.astro";
+import SvglCSS from "../icons/SvglCSS.astro";
+import SvglJAVASCRIPT from "../icons/SvglJAVASCRIPT.astro";
+import SvglVITE from "../icons/SvglVITE.astro";
+import SvglREACT from "../icons/SvglREACT.astro";
+import SvglTAILWIND from "../icons/SvglTAILWIND.astro";
+import SvglASTRO from "../icons/SvglASTRO.astro";
+import Error404 from "../icons/Error404.astro";
+
+interface Props {
+  title: string;
+  description: string;
+  tags: [];
+  link: string;
+}
+
+const { title, description, tags, link } = Astro.props;
+
+// console.log(MyData);
+---
+
 <a
-  class="block group border-2 border-gray-100 hover:border-gray-200 dark:border-gray-700 dark:hover:border-gray-300/30 rounded-xl shadow_translate-transition hover:sm:shadow sm:hover:-translate-y-1"
+  class="block group border-2 border-gray-100 dark:border-gray-700 rounded-xl shadow_translate-transition cursor-pointer"
+  rel="noreferrer"
+  target="_blank"
+  href={link}
 >
-  <slot />
+  <article class="relative flex flex-col justify-between w-full py-6 px-6">
+    <h2 class="text-gray-700 dark:text-gray-200 text-lg font-bold">
+      {title}
+    </h2>
+    <p class="text-slate-400 dark:text-slate-200">{description}</p>
+    <div></div>
+  </article>
+  <!--! <div
+      class="absolute grid place-items-center right-3 top-3 bg-white dark:bg-gray-800 w-9 h-9 rounded-full scale-0 group-hover:scale-90 transition-transform dark:opacity-80 border-0 border-slate-100 border-indigo-100/50 dark:border-slate-200/20 shadow-sm"
+    >
+      <div class="text-gray-400 dark:text-gray-50 text-2xl"></div>
+    </div> -->
+  <div class="flex flex-row px-4">
+    {
+      tags ? (
+        tags.map((dato: unknown) =>
+          dato === "html" ? (
+            <p class="p-1 m-1 inline text-red-500">
+              <SvglHTML />
+            </p>
+          ) : dato === "css" ? (
+            <p class="p-1 m-1 inline text-red-500">
+              <SvglCSS />
+            </p>
+          ) : dato === "javascript" ? (
+            <p class="p-1 m-1 inline text-red-500">
+              <SvglJAVASCRIPT />
+            </p>
+          ) : dato === "vite" ? (
+            <p class="p-1 m-1 inline text-red-500">
+              <SvglVITE />
+            </p>
+          ) : dato === "react" ? (
+            <p class="p-1 m-1 inline text-red-500">
+              <SvglREACT />
+            </p>
+          ) : dato === "tailwind" ? (
+            <p class="p-1 m-1 inline text-red-500">
+              <SvglTAILWIND />
+            </p>
+          ) : dato === "astro" ? (
+            <p class="p-1 m-1 inline text-red-500">
+              <SvglASTRO />
+            </p>
+          ) : (
+            <Error404 />
+          )
+        )
+      ) : (
+        <p class="p-4 m-4 inline text-red-500">no se encontro tags</p>
+      )
+    }
+  </div>
 </a>
