@@ -1,0 +1,36 @@
+---
+import ProjectItem from "./ProjectItem.astro";
+
+const MY_DATA = [
+  {
+    title: "Primer Blog",
+    description: "Desarrolle un Blog que tiene un enrutado dinamico",
+    tags: ["html", "astro", "tailwind"],
+    link: "https://primer-blog-git-main-angelcgars-projects.vercel.app/",
+  },
+  {
+    title: "Testimonios",
+    description: "Una aplicacion que muestra las opiniones publicas",
+    tags: ["react", "vite"],
+    link: "https://angelcgar.github.io/testimonios/",
+  },
+  {
+    title: "Documentación",
+    description: "Aplicacion que muestra la documentacion de JavaScript",
+    tags: ["html", "css", "javascript"],
+    link: "https://angelcgar.github.io/documentacion-proyecto/",
+  },
+  {
+    title: "Pagina de Homenaje",
+    description: "Una pagina para dar homenaje a una importante persona",
+    tags: ["html", "css", "javascript", "vite"],
+    link: "https://angelcgar.github.io/homenaje-proyecto/",
+  },
+];
+---
+
+<div class="grid grid-cols-1 md:grid-cols-2 gap-2 sm:gap-5">
+  <!--* la funcion map tiene que devolver un elemento en la sintaxis jsx-->
+  <!--! Cual es el problema aqui? -->
+  {MY_DATA.map((data) => <ProjectItem {...data} />)}
+</div>

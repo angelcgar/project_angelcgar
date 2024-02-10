@@ -1,17 +1,15 @@
 ---
-import Enlace from "./subComponents/Enlace.astro";
+import Navigation from "./Navigation.astro";
+import Hamburguer from "./Hamburguer.astro";
 ---
 
-<header
-  class="flex justify-center items-center py-2 w-full xl:w-[1120px] mx-auto text-sm md:text-lg lg:text-xl"
->
-  <nav class="flex flex-row gap-x-10 opacity-80">
-    <Enlace href="#sobre-mi">Sobre mí</Enlace>
-
-    <Enlace href="#experiencia">Experiencia</Enlace>
-
-    <Enlace href="#proyectos">Proyecto</Enlace>
-
-    <Enlace href="#contacto">Contacto</Enlace>
+<header class="">
+  <nav class="">
+    <Hamburguer />
+    <Navigation />
+    <!-- <ThemeIcon /> -->
+    <script>
+      import "../scripts/menu.js";
+    </script>
   </nav>
 </header>
