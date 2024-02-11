@@ -1,6 +1,17 @@
 ---
 import CircleArrowUpRight from "../icons/CircleArrowUpRight.astro";
 import GithubIcon from "../icons/GithubIcon.astro";
+import Badge from "./Badge.astro";
+import SvglHTML from "../icons/SvglHTML.astro";
+import SvglCSS from "../icons/SvglCSS.astro";
+import SvglJAVASCRIPT from "../icons/SvglJAVASCRIPT.astro";
+import SvglVITE from "../icons/SvglVITE.astro";
+import SvglREACT from "../icons/SvglREACT.astro";
+import SvglTAILWIND from "../icons/SvglTAILWIND.astro";
+import SvglASTRO from "../icons/SvglASTRO.astro";
+import SvglNEXTJS from "../icons/SvglNEXTJS.astro";
+import Error404 from "../icons/Error404.astro";
+
 interface Props {
   name: string;
   title: string;
@@ -8,23 +19,21 @@ interface Props {
   href: string;
   imageHref: string;
   github: string;
+  tags: [] | null;
 }
 
-const { name, href, title, body, imageHref, github } = Astro.props;
+const { name, href, title, body, imageHref, github, tags } = Astro.props;
 ---
 
-<div class="project-card grid gap-4 sm:gap-7 md:grid-cols-2">
+<div class="project-card grid gap-4 sm:gap-3 md:grid-cols-2 relative">
   <img
     src={imageHref}
     alt=`Una imagen de mi proyecto ${name}`
-    class="project-image"
+    class="project-image relative"
   />
 
-  <div class="flex flex-col gap-3 justify-center">
-    <a href={href} class="px-4 mx-4" target="_blank" rel="noopener">
-      <CircleArrowUpRight class="size-6" />
-    </a>
-    <h3 class="mt-1 text-2xl font-bold text-white">
+  <div class="flex flex-col gap-3 justify-center relative">
+    <h3 class="mt-1 text-2xl font-bold text-white relative">
       {title}
     </h3>
     <p class="text-sm md:text-xl mb-1 p-1 text-pretty">
@@ -33,9 +42,58 @@ const { name, href, title, body, imageHref, github } = Astro.props;
 
     <div class="flex flex-row">
       <a href={github} class="px-4 mx-4" target="_blank" rel="noopener">
-        <GithubIcon class="size-6" />
+        <Badge>
+          <GithubIcon class="size-4 inline" /> Codigo
+        </Badge>
+      </a>
+      <a href={href} class="px-4 mx-4" target="_blank" rel="noopener">
+        <Badge>
+          <CircleArrowUpRight class="size-4 inline" /> Live
+        </Badge>
       </a>
     </div>
+
+    {
+      tags ? (
+        tags.map((dato) =>
+          dato === "html" ? (
+            <p class="p-1 m-1 inline text-red-500">
+              <SvglHTML />
+            </p>
+          ) : dato === "css" ? (
+            <p class="p-1 m-1 inline text-red-500">
+              <SvglCSS />
+            </p>
+          ) : dato === "javascript" ? (
+            <p class="p-1 m-1 inline text-red-500">
+              <SvglJAVASCRIPT />
+            </p>
+          ) : dato === "vite" ? (
+            <p class="p-1 m-1 inline text-red-500">
+              <SvglVITE />
+            </p>
+          ) : dato === "react" ? (
+            <p class="p-1 m-1 inline text-red-500">
+              <SvglREACT />
+            </p>
+          ) : dato === "tailwind" ? (
+            <p class="p-1 m-1 inline text-red-500">
+              <SvglTAILWIND />
+            </p>
+          ) : dato === "astro" ? (
+            <p class="p-1 m-1 inline text-red-500">
+              <SvglASTRO />
+            </p>
+          ) : dato === "next" ? (
+            <SvglNEXTJS />
+          ) : (
+            <Error404 />
+          )
+        )
+      ) : (
+        <p class="p-4 m-4 inline text-red-500">no se encontro tags</p>
+      )
+    }
   </div>
 </div>
 
