@@ -4,6 +4,8 @@ import SvglCSS from "../icons/SvglCSS.astro";
 import SvglJAVASCRIPT from "../icons/SvglJAVASCRIPT.astro";
 import SvglVITE from "../icons/SvglVITE.astro";
 import SvglREACT from "../icons/SvglREACT.astro";
+import OtherTAILWIND from "../icons/OtherTAILWIND.astro";
+import tailwindcss from "../icons/tailwindcss-mark.svg";
 import SvglTAILWIND from "../icons/SvglTAILWIND.astro";
 import SvglASTRO from "../icons/SvglASTRO.astro";
 import Error404 from "../icons/Error404.astro";
@@ -41,33 +43,34 @@ const { title, description, tags, link } = Astro.props;
   <div class="flex flex-row px-4">
     {
       tags ? (
-        tags.map((dato: unknown) =>
+        tags.map((dato) =>
           dato === "html" ? (
-            <p class="p-1 m-1 inline text-red-500">
+            <p class="p-1 m-1 inline">
               <SvglHTML />
             </p>
           ) : dato === "css" ? (
-            <p class="p-1 m-1 inline text-red-500">
+            <p class="p-1 m-1 inline">
               <SvglCSS />
             </p>
           ) : dato === "javascript" ? (
-            <p class="p-1 m-1 inline text-red-500">
+            <p class="p-1 m-1 inline">
               <SvglJAVASCRIPT />
             </p>
           ) : dato === "vite" ? (
-            <p class="p-1 m-1 inline text-red-500">
+            <p class="p-1 m-1 inline">
               <SvglVITE />
             </p>
           ) : dato === "react" ? (
-            <p class="p-1 m-1 inline text-red-500">
+            <p class="p-1 m-1 inline">
               <SvglREACT />
             </p>
           ) : dato === "tailwind" ? (
-            <p class="p-1 m-1 inline text-red-500">
+            <p class="p-1 m-1 inline">
+              <OtherTAILWIND />
               <SvglTAILWIND />
             </p>
           ) : dato === "astro" ? (
-            <p class="p-1 m-1 inline text-red-500">
+            <p class="p-1 m-1 inline">
               <SvglASTRO />
             </p>
           ) : (
